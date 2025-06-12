@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../data/info_variables.dart';
+import '../widgets/product_card.dart';
+
 class ShoppingHomePage extends StatefulWidget {
   const ShoppingHomePage({super.key});
 
@@ -61,7 +64,9 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
                     padding: const EdgeInsets.symmetric(horizontal: 9.0),
                     child: GestureDetector(
                       onTap: () {
-                        selectedFilter = filter;
+                        setState(() {
+                          selectedFilter = filter;
+                        });
                       },
                       child: Chip(
                         shape: RoundedRectangleBorder(
@@ -84,6 +89,22 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
                         ),
                       ),
                     ),
+                  );
+                },
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return ProductCard(
+                    title: product["title"] as String,
+                    price: product["price"] as double,
+                    image: product["imageUrl"] as String,
+                    backgroundColor: index.isEven
+                        ? Color.fromRGBO(216, 240, 253, 1)
+                        : Color.fromRGBO(245, 247, 249, 1),
                   );
                 },
               ),
