@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/data/info_variables.dart';
-import 'package:shopping_app/pages/product_details_page.dart';
 import 'package:shopping_app/pages/shopping_home_page.dart';
 
 void main() {
@@ -34,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: ProductDetailsPage(product: products[0]),
+      home: ShoppingHomePage(),
     );
   }
 }
