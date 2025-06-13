@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/cart_provider.dart';
 
 import '../data/info_variables.dart';
 
@@ -12,6 +14,7 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<CartProvider>(context).cart;
     return Scaffold(
       appBar: AppBar(title: Text('Cart'), centerTitle: true),
       body: ListView.builder(
@@ -28,8 +31,8 @@ class _CartPageState extends State<CartPage> {
               backgroundImage: AssetImage(cartItem['imageUrl'].toString()),
               radius: 30,
             ),
-            trailing: Icon(Icons.delete, color: Colors.redAccent,),
-            subtitle: Text(cartItem['sizes'].toString()),
+            trailing: Icon(Icons.delete, color: Colors.redAccent),
+            subtitle: Text('Size: ${cartItem['sizes'].toString()}'),
           );
         },
       ),
