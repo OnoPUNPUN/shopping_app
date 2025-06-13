@@ -16,10 +16,15 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(fontSize: 20, color: Colors.black),
+          backgroundColor: Colors.white
         ),
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromRGBO(254, 206, 1, 1),
           primary: const Color.fromRGBO(254, 206, 1, 1),
+        ),
+        scaffoldBackgroundColor: Colors.white,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
         ),
         inputDecorationTheme: InputDecorationTheme(
           hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
