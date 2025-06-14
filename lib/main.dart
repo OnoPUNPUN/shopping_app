@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopping_app/pages/shopping_home_page.dart';
-
+import 'auth_flow_controller.dart';
 import 'cart_provider.dart';
 
 void main() {
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Lato',
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(fontSize: 20, color: Colors.black),
-            backgroundColor: Colors.white
+            backgroundColor: Colors.white,
           ),
           colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromRGBO(254, 206, 1, 1),
@@ -42,7 +41,7 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: ShoppingHomePage(),
+        home: const AuthFlowController(),
       ),
     );
   }
